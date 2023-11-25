@@ -1,0 +1,19 @@
+Package: terraExtra
+Type: Package
+Title: An extension package based on the terra package
+Version: 0.1.0
+Authors@R: 
+    person(given = "Yuxuan",
+           family = "Xie",
+           role = c("aut", "cre"),
+           email = "xieyx@cug.edu.cn",
+           comment = c(ORCID = "0009-0006-8087-6337"))
+Maintainer: Yuxuan Xie <xieyx@cug.edu.cn>
+Description: An extension package based on the terra package.
+License: GPL (>= 3)
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.2.3
+Imports: 
+    data.table,
+    terra
