@@ -22,5 +22,5 @@ rast2significance <- function() {
       poly
     }
     '
-  rast2signif <<- parse(text = t_function) |> eval()
+  parse(text = t_function) |> eval()
 }
