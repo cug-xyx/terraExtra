@@ -9,7 +9,7 @@
 #' @return a list or SpatRaster
 #' @export
 rast_multifiles <- function(path, merge=TRUE, ...) {
-  if (length(path) == 1 &&is_dir(path)) path <- dir(path, full.names = T)
+  if (length(path) == 1 && is_dir(path)) path <- dir(path, full.names = T)
 
   r <- lapply(path, terra::rast, ...)
 
