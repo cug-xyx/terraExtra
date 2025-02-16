@@ -1,10 +1,6 @@
 library(magrittr)
 library(terra)
 
-fs <- dir('I:/CFSV2/ET/', full.names = T)
+r <- rast('I:/Paper_data/Zhang_2023_Science_PME/ML_annual.tif')
 
-r <- rast(fs[1])
-
-r_res <- tapp(r, index='days', fun='mean', na.rm=T, cores=6)
-
-r_res
+time(r) <- 2001:2020

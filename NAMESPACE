@@ -2,6 +2,7 @@
 
 export(aggregate_by_time)
 export(array2rast)
+export(convert_ext_crs)
 export(df2rast)
 export(filter_date)
 export(is_dir)
