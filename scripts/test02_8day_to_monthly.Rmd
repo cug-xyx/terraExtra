@@ -1,0 +1,43 @@
+```{r}
+library(magrittr)
+library(terra)
+```
+
+```{r}
+r <- rast('F:/ET/PML_V2/PML_V2_V018_ET_050deg_8day_2020.nc')
+r <- r %>% t() %>% flip(direction = 'vertical')
+```
+
+```{r}
+aggregate_8day_to_yearly <- function(x, na.rm = TRUE) {
+  tm <- time(x)
+
+  names(x) <- tm
+
+  aggregate_8day_to_yearly_inner <- function(x, na.rm = TRUE) {
+    tm <- lubridate::ymd(names(x))
+
+    yr <- lubridate::year(tm[1])
+
+    w <- c(rep(8, 45), ifelse(lubridate::leap_year(yr), 6, 5))
+
+    sum(x * w, na.rm = na.rm)
+  }
+
+  # TODO: parallel is not working
+  terra::tapp(
+    x, index = "years", fun = aggregate_8day_to_yearly_inner,
+    na.rm = na.rm, cores = 1
+  )
+}
+
+system.time({
+  r_yearly <- day8_to_yearly(r, cores = 30)
+})
+
+system.time({
+  r_yearly <- day8_to_yearly(r)
+})
+
+r_yearly
+```

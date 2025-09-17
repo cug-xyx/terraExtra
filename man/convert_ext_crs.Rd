@@ -7,9 +7,15 @@
 convert_ext_crs(xmin, xmax, ymin, ymax, crs = "ESRI:54030")
 }
 \arguments{
-\item{xmin}{}
+\item{xmin}{xmin}
 
-\item{ymax}{}
+\item{xmax}{xmax}
+
+\item{ymin}{ymin}
+
+\item{ymax}{ymax}
+
+\item{crs}{crs}
 }
 \description{
 Convert crs of extent

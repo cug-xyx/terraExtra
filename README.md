@@ -32,4 +32,6 @@ library(terraExtra)
 
 ## TODO
 
+- [ ] `8day_to_monthly`
+- [ ] Remove meaningless functions like `aggregate_to_yearly` (use `tapp`) or `rast_multifiles`
 - [ ] Create example data
