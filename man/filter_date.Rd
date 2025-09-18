@@ -8,13 +8,14 @@ filter_date(r, start = NULL, end = NULL)
 }
 \arguments{
 \item{r}{a SpatRaster object}
+
+\item{start}{start date of SpatRaster (20250918)}
+
+\item{end}{end date of SpatRaster (20250919)}
 }
 \value{
 SpatRaster
 }
 \description{
 Filter SpatRaster layers by time attributes
-}
-\examples{
-filter_date(r, start=20010101, end=20010102)
 }

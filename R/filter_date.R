@@ -1,14 +1,15 @@
 #' Filter SpatRaster layers by time attributes
 #'
 #' @param r a SpatRaster object
+#' @param start start date of SpatRaster (20250918)
+#' @param end end date of SpatRaster (20250919)
 #'
 #' @importFrom lubridate ymd
 #'
 #' @return SpatRaster
 #' @export
-#'
-#' @examples filter_date(r, start=20010101, end=20010102)
 filter_date <- function(r, start=NULL, end=NULL) {
+  # filter_date(r, start=20010101, end=20010102)
   t <- time(r)
   if (is.na(t[1])) stop("SpatRaster does not have time attribute")
 

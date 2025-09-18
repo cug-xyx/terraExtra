@@ -12,8 +12,10 @@
 #'
 #' @return plot
 #' @export
-significance <- function(r, pvalue = 0.05, col = 'black', lwd = 0.1,
-                         half_line = TRUE, ...) {
+significance <- function(
+  r, pvalue = 0.05, col = 'black', lwd = 0.1,
+  half_line = TRUE, ...
+) {
   if (terra::nlyr(r) > 1)
     stop("Only one layer of significance data can be included in parameter r")
 
