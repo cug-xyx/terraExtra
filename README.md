@@ -1,6 +1,3 @@
-
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
 # terraExtra
 
 <!-- badges: start -->
@@ -26,14 +23,14 @@ remotes::install_github("cug-xyx/terraExtra")
 
 ## Functions
 
-| Function name               | Description                                       | Status |
-| --------------------------- | ------------------------------------------------- | ------ |
-| `aggregate_8day_to_yearly`  | aggregate 8-day `SpatRaster` to **yearly scale**  | ✅     |
-| `aggregate_8day_to_monthly` | aggregate 8-day `SpatRaster` to **monthly scale** | ✅     |
-| `significance`              | add significance plot using `SpatRaster`          | ✅     |
-| `filter_date`               | filter `SpatRaster` layers with date range        | ✅     |
+| Function name               | Description                                        | Status |
+| --------------------------- | -------------------------------------------------- | ------ |
+| `aggregate_8day_to_yearly`  | aggregate 8-day `SpatRaster` to **yearly scale**   | ✅     |
+| `aggregate_8day_to_monthly` | aggregate 8-day `SpatRaster` to **monthly scale**  | ✅     |
+| `significance`              | add significance plot using `SpatRaster`           | ✅     |
+| `filter_date`               | filter `SpatRaster` layers with date range         | ✅     |
+| `cor.test`                  | function `stats::cor.test` for `SpatRaster` object | ✅     |
 
 ## TODO
 
-- [x] `8day_to_monthly`
 - [ ] Create example data

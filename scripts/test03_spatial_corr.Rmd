@@ -1,0 +1,32 @@
+```{r}
+library(terra)
+```
+
+```{r}
+r <- rast('E:/Research/2025_SPEI_drought_error/PET/CRUv4.09_PET_monthly_050deg_1980-2023.tif')
+
+# r <- crop(r, ext(70, 140, 15, 55))
+```
+
+```{r}
+r_res <- cor.test(
+  filter_date(r, '1990-01-01', '1995-01-01'),
+  filter_date(r, '2010-01-01', '2015-01-01'),
+  cores = 30, method = "pearson"
+)
+
+plot(r_res)
+
+r_res
+```
+
+```{r}
+r_all <- c(
+  filter_date(r, '1990-01-01', '1995-01-01'),
+  filter_date(r, '2010-01-01', '2015-01-01')
+)
+
+r_res <- app(r_all, fun = fun_cor, cores = 20, method = "pearson")
+
+r_res
+```
