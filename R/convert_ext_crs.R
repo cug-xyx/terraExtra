@@ -14,5 +14,5 @@ convert_ext_crs <- function(xmin, xmax, ymin, ymax, crs = 'ESRI:54030') {
     terra::project(crs) |>
     ext()
 
-  tmp@ptr@.xData$vector
+  tmp@pntr@.xData$vector
 }
