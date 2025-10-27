@@ -30,6 +30,7 @@ remotes::install_github("cug-xyx/terraExtra")
 | `significance`              | add significance plot using `SpatRaster`           | ✅     |
 | `filter_date`               | filter `SpatRaster` layers with date range         | ✅     |
 | `cor.test`                  | function `stats::cor.test` for `SpatRaster` object | ✅     |
+| `hillshade`                 | calculate hillshade using DEM `SpatRaster` object  | ✅     |
 
 ## TODO
 
