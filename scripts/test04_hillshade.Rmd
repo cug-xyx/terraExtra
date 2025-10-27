@@ -1,0 +1,35 @@
+```{r}
+library(magrittr)
+library(terra)
+library(sf)
+```
+
+```{r}
+sf_world <- read_sf('F:/shpfiles/natural_earth/physical/ne_10m_land.shp')
+```
+
+```{r}
+f <- 'E:/var_Elevation/USGS_SRTM_GL1_003_NorthEastern_China_0.01deg.nc'
+
+r <- rast(f) %>% 
+  t() %>% 
+  flip(direction = 'vertical') %>% 
+  crop(sf_world, mask=T)
+```
+
+```{r}
+r_hillshade_multi <- hillshade(r)
+plot(r_hillshade_multi, col = grey(1:100 / 100), range = c(450, 770))
+```
+
+```{r}
+vmin <- 450
+vmax <- 770
+
+Ipaper::write_fig({
+  r_hillshade_multi %>% 
+    ifel(. > vmax, vmax, .) %>% 
+    ifel(. < vmin, vmin, .) %>% 
+    plot(col = grey(1:100 / 100), range = c(vmin, vmax))
+}, 'Figure.jpg', res = 600, width = 7, height = 7)
+```
